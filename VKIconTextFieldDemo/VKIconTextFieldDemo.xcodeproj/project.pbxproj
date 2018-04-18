@@ -13,11 +13,11 @@
 		AA502624208731D300237BA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA502623208731D300237BA4 /* Assets.xcassets */; };
 		AA502627208731D300237BA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA502625208731D300237BA4 /* LaunchScreen.storyboard */; };
 		AA50262A208731D300237BA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA502629208731D300237BA4 /* main.m */; };
-		AA5026322087328600237BA4 /* VKIconTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5026312087328600237BA4 /* VKIconTextField.m */; };
 		AA5026352087344800237BA4 /* shield@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA5026332087344700237BA4 /* shield@2x.png */; };
 		AA5026362087344800237BA4 /* shield_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA5026342087344800237BA4 /* shield_2@2x.png */; };
 		AA5026392087345700237BA4 /* user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA5026372087345700237BA4 /* user@2x.png */; };
 		AA50263A2087345700237BA4 /* user_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AA5026382087345700237BA4 /* user_2@2x.png */; };
+		AA5026402087463300237BA4 /* VKIconTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = AA50263F2087463300237BA4 /* VKIconTextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,12 +31,12 @@
 		AA502626208731D300237BA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA502628208731D300237BA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA502629208731D300237BA4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AA5026302087328600237BA4 /* VKIconTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VKIconTextField.h; sourceTree = "<group>"; };
-		AA5026312087328600237BA4 /* VKIconTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VKIconTextField.m; sourceTree = "<group>"; };
 		AA5026332087344700237BA4 /* shield@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shield@2x.png"; sourceTree = "<group>"; };
 		AA5026342087344800237BA4 /* shield_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shield_2@2x.png"; sourceTree = "<group>"; };
 		AA5026372087345700237BA4 /* user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user@2x.png"; sourceTree = "<group>"; };
 		AA5026382087345700237BA4 /* user_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_2@2x.png"; sourceTree = "<group>"; };
+		AA50263E2087463300237BA4 /* VKIconTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKIconTextField.h; sourceTree = "<group>"; };
+		AA50263F2087463300237BA4 /* VKIconTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKIconTextField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,12 +69,11 @@
 		AA502619208731D100237BA4 /* VKIconTextFieldDemo */ = {
 			isa = PBXGroup;
 			children = (
+				AA50263D2087463300237BA4 /* VKIconTextField */,
 				AA50261A208731D100237BA4 /* AppDelegate.h */,
 				AA50261B208731D100237BA4 /* AppDelegate.m */,
 				AA50261D208731D100237BA4 /* ViewController.h */,
 				AA50261E208731D100237BA4 /* ViewController.m */,
-				AA5026302087328600237BA4 /* VKIconTextField.h */,
-				AA5026312087328600237BA4 /* VKIconTextField.m */,
 				AA502620208731D100237BA4 /* Main.storyboard */,
 				AA502623208731D300237BA4 /* Assets.xcassets */,
 				AA502625208731D300237BA4 /* LaunchScreen.storyboard */,
@@ -86,6 +85,16 @@
 				AA5026372087345700237BA4 /* user@2x.png */,
 			);
 			path = VKIconTextFieldDemo;
+			sourceTree = "<group>";
+		};
+		AA50263D2087463300237BA4 /* VKIconTextField */ = {
+			isa = PBXGroup;
+			children = (
+				AA50263E2087463300237BA4 /* VKIconTextField.h */,
+				AA50263F2087463300237BA4 /* VKIconTextField.m */,
+			);
+			name = VKIconTextField;
+			path = ../../VKIconTextField;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,7 +174,7 @@
 				AA50261F208731D100237BA4 /* ViewController.m in Sources */,
 				AA50262A208731D300237BA4 /* main.m in Sources */,
 				AA50261C208731D100237BA4 /* AppDelegate.m in Sources */,
-				AA5026322087328600237BA4 /* VKIconTextField.m in Sources */,
+				AA5026402087463300237BA4 /* VKIconTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

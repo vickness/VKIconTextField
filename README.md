@@ -7,4 +7,10 @@ pod 'VKIconTextField', '~> 1.0'
 ```
 
 # ScreenShot
+
+<figure class="half">
+    <img src="http://github.com/Senvid-iOS/VKIconTextField/raw/master/ScreenShot/image1.png">
+    <img src="http://github.com/Senvid-iOS/VKIconTextField/raw/master/ScreenShot/image1.png">
+</figure>
+
 ![截图](https://github.com/Senvid-iOS/VKIconTextField/raw/master/ScreenShot/image1.png)![截图](https://github.com/Senvid-iOS/VKIconTextField/raw/master/ScreenShot/image2.png)

@@ -39,20 +39,20 @@
     self.rightViewMode = UITextFieldViewModeAlways;
     self.returnKeyType = UIReturnKeyDone;
     self.autocorrectionType = UITextAutocorrectionTypeNo;
-    
+    self.autocapitalizationType = UITextAutocapitalizationTypeNone;
     self.delegate = self;
-    
     self.separateLineWith = 1.0;
 }
 
 -(void)layoutSubviews{
     [super layoutSubviews];
     
-    CGFloat height = CGRectGetHeight(self.bounds);
-    CGFloat width = CGRectGetWidth(self.bounds);
+    if (self.isEditing) {
+        return;
+    }
     
     if (_bottomLine) {
-        _bottomLine.frame = CGRectMake(0, height-self.separateLineWith, width, self.separateLineWith);
+        _bottomLine.frame = CGRectMake(0, CGRectGetHeight(self.bounds)-self.separateLineWith, CGRectGetWidth(self.bounds), self.separateLineWith);
     }
 }
 
@@ -83,15 +83,7 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
     
     if (_showHighlightedEditing) {
-        
-        //显示为高亮状态
-        _leftBtnView.selected = YES;
-        if (_bottomLine) {
-            _bottomLine.backgroundColor = _colorHighlight;
-        }
-        if (self.showBoundLine) {
-            self.layer.borderColor = _colorHighlight.CGColor;
-        }
+        [self performSelector:@selector(changeEditStatus:) withObject:@(YES) afterDelay:0.1];
     }
 }
 
@@ -99,13 +91,35 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     
     if (_showHighlightedEditing) {
+        [self performSelector:@selector(changeEditStatus:) withObject:@(NO) afterDelay:0.1];
+    }
+}
+
+
+/** 改变编辑状态*/
+-(void)changeEditStatus:(id)obj{
+    
+    if ([obj boolValue]) {
         
-        //显示为普通状态
-        _leftBtnView.selected = NO;
+        if (_leftBtnView) {
+            _leftBtnView.selected = YES;
+        }
+        if (_bottomLine) {
+            _bottomLine.backgroundColor = _colorHighlight;
+        }
+        if (_showBoundLine) {
+            self.layer.borderColor = _colorHighlight.CGColor;
+        }
+        
+    } else {
+        
+        if (_leftBtnView) {
+            _leftBtnView.selected = NO;
+        }
         if (_bottomLine) {
             _bottomLine.backgroundColor = _colorNormal;
         }
-        if (self.showBoundLine) {
+        if (_showBoundLine) {
             self.layer.borderColor = _colorNormal.CGColor;
         }
     }
@@ -113,7 +127,7 @@
 
 /** 退出编辑状态*/
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
-    [self resignFirstResponder];
+    [textField resignFirstResponder];
     return YES;
 }
 
@@ -226,7 +240,7 @@
 //控制左侧视图显示位置
 -(CGRect)leftViewRectForBounds:(CGRect)bounds{
     CGRect rect = [super leftViewRectForBounds:bounds];
-    if (self.showBoundLine) {
+    if (_showBoundLine) {
         UIEdgeInsets insets = UIEdgeInsetsMake(0, 10, 0, -10);
         return UIEdgeInsetsInsetRect(rect, insets);
     }
@@ -234,3 +248,4 @@
 }
 
 @end
+

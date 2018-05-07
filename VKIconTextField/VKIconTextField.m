@@ -44,18 +44,6 @@
     self.separateLineWith = 1.0;
 }
 
--(void)layoutSubviews{
-    [super layoutSubviews];
-    
-    if (self.isEditing) {
-        return;
-    }
-    
-    if (_bottomLine) {
-        _bottomLine.frame = CGRectMake(0, CGRectGetHeight(self.bounds)-self.separateLineWith, CGRectGetWidth(self.bounds), self.separateLineWith);
-    }
-}
-
 
 #pragma mark -
 #pragma mark - 视图懒加载
@@ -64,6 +52,8 @@
     if (!_bottomLine) {
         _bottomLine = [[UIView alloc] init];
         _bottomLine.backgroundColor = _colorNormal;
+        _bottomLine.frame = CGRectMake(0, CGRectGetHeight(self.bounds)-self.separateLineWith, CGRectGetWidth(self.bounds), self.separateLineWith);
+        _bottomLine.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin;
     }
     return _bottomLine;
 }
